@@ -56,10 +56,10 @@
     int maximumNumberOfLines;
 	int minimumNumberOfLines;
 	BOOL animateHeightChange;
-	NSObject <UIExpandingTextViewDelegate> *delegate;
-	NSString *text;
-	UIFont *font;
-	UIColor *textColor;
+	NSObject <UIExpandingTextViewDelegate> *__unsafe_unretained delegate;
+	NSString *__unsafe_unretained text;
+	UIFont *__unsafe_unretained font;
+	UIColor *__unsafe_unretained textColor;
 	UITextAlignment textAlignment; 
 	NSRange selectedRange;
 	BOOL editable;
@@ -70,23 +70,23 @@
     UILabel *placeholderLabel;
 }
 
-@property (nonatomic, retain) UITextView *internalTextView;
+@property (nonatomic, strong) UITextView *internalTextView;
 
 @property int maximumNumberOfLines;
 @property int minimumNumberOfLines;
 @property BOOL animateHeightChange;
 
-@property (assign) NSObject<UIExpandingTextViewDelegate> *delegate;
-@property (nonatomic,assign) NSString *text;
-@property (nonatomic,assign) UIFont *font;
-@property (nonatomic,assign) UIColor *textColor;
-@property (nonatomic) UITextAlignment textAlignment;
-@property (nonatomic) NSRange selectedRange;
-@property (nonatomic,getter=isEditable) BOOL editable;
-@property (nonatomic) UIDataDetectorTypes dataDetectorTypes __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_0);
-@property (nonatomic) UIReturnKeyType returnKeyType;
-@property (nonatomic, retain) UIImageView *textViewBackgroundImage;
-@property (nonatomic,copy) NSString *placeholder;
+@property (nonatomic, assign) NSObject<UIExpandingTextViewDelegate> *delegate;
+@property (nonatomic, assign) NSString *text;
+@property (nonatomic, assign) UIFont *font;
+@property (nonatomic, assign) UIColor *textColor;
+@property (nonatomic, assign) UITextAlignment textAlignment;
+@property (nonatomic, assign) NSRange selectedRange;
+@property (nonatomic, getter=isEditable, assign) BOOL editable;
+@property (nonatomic, assign) UIDataDetectorTypes dataDetectorTypes __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_0);
+@property (nonatomic, assign) UIReturnKeyType returnKeyType;
+@property (nonatomic, strong) UIImageView *textViewBackgroundImage;
+@property (nonatomic, copy) NSString *placeholder;
 - (BOOL)hasText;
 - (void)scrollRangeToVisible:(NSRange)range;
 - (void)clearText;

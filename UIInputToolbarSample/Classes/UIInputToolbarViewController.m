@@ -34,11 +34,6 @@
 
 @synthesize inputToolbar;
 
-- (void)dealloc
-{
-    [inputToolbar release];
-    [super dealloc];
-}
 
 #pragma mark - View lifecycle
 

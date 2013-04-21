@@ -64,20 +64,20 @@
     [button addTarget:self action:@selector(inputButtonPressed) forControlEvents:UIControlEventTouchDown];
     [button sizeToFit];
     
-    self.inputButton = [[[UIBarButtonItem alloc] initWithCustomView:button] autorelease];
+    self.inputButton = [[UIBarButtonItem alloc] initWithCustomView:button];
     self.inputButton.customView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
     /* Disable button initially */
     self.inputButton.enabled = NO;
 
     /* Create UIExpandingTextView input */
-    self.textView = [[[UIExpandingTextView alloc] initWithFrame:CGRectMake(7, 7, 236, 26)] autorelease];
+    self.textView = [[UIExpandingTextView alloc] initWithFrame:CGRectMake(7, 7, 236, 26)];
     self.textView.internalTextView.scrollIndicatorInsets = UIEdgeInsetsMake(4.0f, 0.0f, 10.0f, 0.0f);
     self.textView.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleWidth;
     self.textView.delegate = self;
     [self addSubview:self.textView];
     
     /* Right align the toolbar button */
-    UIBarButtonItem *flexItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil] autorelease];
+    UIBarButtonItem *flexItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
     
     NSArray *items = [NSArray arrayWithObjects: flexItem, self.inputButton, nil];
     [self setItems:items animated:NO];
@@ -111,12 +111,6 @@
     self.inputButton.customView.frame = i;
 }
 
-- (void)dealloc
-{
-    [textView release];
-    [inputButton release];
-    [super dealloc];
-}
 
 
 #pragma mark -
